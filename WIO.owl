@@ -1,0 +1,2295 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2010/1/WIO.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">3.0</owl:versionInfo>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:date rdf:datatype="&xsd;string">Created on Thursday, 29 July 2010
+Updated on Monday, 15 October 2012</dc:date>
+        <dc:title>Widget Identification Ontology (WIO)</dc:title>
+        <rdfs:comment>This ontology provides the definition of the taxonomy to classify widgets. It allows different types of widgets to be uniquely identified and related. Thus, classification to the widget can be employed.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <owl:AnnotationProperty rdf:about="&dc;date"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&dc;title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Associates two classes; with the former inheriting the latter values</dc:description>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assignedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assignedBy">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This associates two classes with the former class containing the latter class. The two classes are related by the former class inheriting the latter class through the has code construct relationship.
+
+Usually the former class will be a subset of the Tell-sign class.</dc:description>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents">
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This associates two classes with the former class containing the latter class. The two classes are related by the former class inheriting the latter class through the has component relationship.
+
+Usually the former class will be a subset of the Widgets class.</dc:description>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasDoubleCodeConstruct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasDoubleCodeConstruct">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This associates two classes with the former class containing twice the latter class. The two classes are related by the former class inheriting twice the latter class through the has code construct relationship.
+
+Usually the former class will be a subset of the Tell-sign class.</dc:description>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasKeyword -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasKeyword">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign">
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This associates two classes with the former class containing the latter class. The two classes are related by the former class inheriting the latter class through the has tell-sign relationship.
+
+Usually the former class will be a subset of the Components class.</dc:description>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#monitorEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#monitorEvent">
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:date rdf:datatype="&xsd;string">Sunday, 03 April 2011</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">This object property relates the behaviour of the Tell-sign to an Event.</dc:creator>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#pointsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#pointsTo">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Refers to a location in memory/stack/array.</dc:description>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referredBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referredBy">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ASL_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ASL_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStrokes_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MonitorTextField_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_ElementAttribute_ManipulatingDOM_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStrokes_VisibleComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:title rdf:datatype="&xsd;string">Auto Suggest List (ASL) Widget</dc:title>
+        <dc:description rdf:datatype="&xsd;string">This is a Web widget that provides its user with suggested content found on the service provider servers. These suggested content are related to the input the user enters.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 18 February 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AddListener_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AddListener_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Wednesday, 13 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">domElement.addEventListener(event, handler, boolean);</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Addition_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Addition_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PlusSign_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable = variable + variable</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AnchorElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AnchorElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">&lt;a ...&gt;&lt;/a&gt;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayLength_Assignment_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayLength_Assignment_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Assignment_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable = array.length</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayObject_Variable_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayObject_Variable_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Variable_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable = new Array()
+variable[]</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Assignment_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Assignment_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">=</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Begin_Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Begin_Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Buttons_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Buttons_VisibleComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Processes that involves buttons objects</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Carousel_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Carousel_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayPointer_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_NextButton_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_PreviousButton_VisibleComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:title rdf:datatype="&xsd;string">Carousel Widget</dc:title>
+        <dc:description rdf:datatype="&xsd;string">This Web widget displays its content like a Carousel fashion (loops endlessly). Usually this widget is used to a list of content to its user in an orderly manner. The user of this widget can also use the controls available to inform the widget the content in the list that he/she want to view.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 18 February 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ChangeKeyword_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ChangeKeyword_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onChange event keyword</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventHandler_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ChangeKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeProperty_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Monitor an onChange event triggered on the element.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventListener_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventListener_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AddListener_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ChangeKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventListener_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Monitor an onChange event triggered on the element.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check38_KeyCode_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check38_KeyCode_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyCode_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Check key code property value is 38.
+.keyCode = 38
+
+For &#39;up&#39; key.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check40_KeyCode_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check40_KeyCode_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyCode_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Check key code property value is 40.
+.keyCode = 40
+
+For &#39;down&#39; key.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckEndOfList_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckEndOfList_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#End_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Last_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsArrayLength_Expression_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalPredicate_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This is a condition the developer specific to check if the array or list pointer&#39;s current location is at the end/last position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckStartOfList_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckStartOfList_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Begin_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#First_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Start_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsZero_Expression_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalPredicate_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This is a condition the developer specific to check if the array or list pointer&#39;s current location is at the start/beginning.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ClickKeyword_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ClickKeyword_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onClick event keyword</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventHandler_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ClickKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickProperty_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Monitor an onClick event triggered on the element.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventListener_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventListener_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AddListener_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ClickKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventListener_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Monitor an onClick event triggered on the element.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component"/>
+        <dc:date rdf:datatype="&xsd;string">13 Dec 2011, Tue</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Non visible components to the user that are in the code that form the process of the widget.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct">
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">These are code constructs that forms a tell-sign</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CollapsiblePanels_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CollapsiblePanels_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:title rdf:datatype="&xsd;string">Collapsible Panels Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Friday, 06 May 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This widget allow user to hide irrelevant content or show it whenever required.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component">
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">These are the different components that defines a widget</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Conceptual process within a code.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalOperator_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalOperator_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Variable = (conditions)? ... : ...;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalPredicate_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConditionalPredicate_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Instances of conditional predicate.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CustomisableContent_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CustomisableContent_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:title rdf:datatype="&xsd;string">Customisable Content Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Friday, 06 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Decrement_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Decrement_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MinusSign_CodeConstruct"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#One_NumericValue_CodeConstruct"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasDoubleCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MinusSign_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable-- (OR)
+variable = variable - 1</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayPointer_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayPointer_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referentialVariable_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">The pointer of a list of content which the widget refers to when displaying the results to the user.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeDOMElementsVisible_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateDOMElements_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">The area or DOM element within the Web page that the computed results by the widget is presented.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStroke_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStroke_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check40_KeyCode_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStroke_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Tell tale signs that the developer is monitoring the user down key on the keyboard.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStrokes_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStrokes_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Down_KeyStroke_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStrokes_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Monitors the &#39;up&#39; button of the user&#39;s keyboard.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_ManipulatingDOM_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_ManipulatingDOM_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingDOM_CodeComponent"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">hardcoding the assignment of a DOM element attribute by the developer.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+        <dc:description rdf:datatype="&xsd;string">The element&#39;s attribute value</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementStyle_ManipulatingDOM_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementStyle_ManipulatingDOM_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingDOM_CodeComponent"/>
+        <dc:description rdf:datatype="&xsd;string">Changing the DOM element&#39;s style. i.e., color, z-index, display...</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tue, 03 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementsType_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementsType_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+        <dc:description rdf:datatype="&xsd;string">The elements type (tag name) in the HTML or DOM</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#End_Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#End_Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:date rdf:datatype="&xsd;string">Sunday, 03 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Using the monitoring element, the browser monitors it for a specified event. Then whenever it is trigger the handler will be executed.
+
+Each event handler is reference from the DOM element it is monitoring and it will either invoke the specified handler or return a boolean TRUE or FALSE</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventListener_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventListener_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:date rdf:datatype="&xsd;string">Sunday, 03 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Using the element to be monitored, the browsers monitors it for a specified event. Then whenever it is trigger the handler will be executed.
+
+Each event handler is reference from the DOM element it is monitoring and it will either invoke the specified handler or return a boolean TRUE or FALSE</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">E.g., onClick, onChange, onFocus...</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Expression_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Expression_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Expressions are conditions that will be evaluated when processing a set of code</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_NextButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_NextButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckEndOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToEndofList_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NextButton_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">This class inherits all the attributes of a Next button but when it comes to the end of the list it remains at its last position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_PreviousButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_PreviousButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckStartOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToStartOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PreviousButton_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">This class inherits all the attributes of a Previous button but when it comes to the start of the list it remains at its last position.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#First_Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#First_Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToEndofList_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToEndofList_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#End_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Last_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayLength_Assignment_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Redirect to the end of the list/array</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToStartOfList_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToStartOfList_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Begin_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#First_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#assigned"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Start_Keyword_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Zero_Assignment_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideContent_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideContent_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDOMElements_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementStyle_ManipulatingDOM_CodeComponent"/>
+        <dc:title rdf:datatype="&xsd;string">Hide Related Content</dc:title>
+        <dc:description rdf:datatype="&xsd;string">This component hides the related content to the focus content.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thur, 04 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDOMElements_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDOMElements_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hide_ManipulateDOMElements_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingStylingProperties_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Use CSS style visiable to hide or display to none.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Wed, 11 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDisplayWindow_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDisplayWindow_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideDOMElements_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Friday, 06 May 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Hide the Display Window via CSS styling</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hide_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hide_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Wed, 11 May 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">element.style.visibility = hide
+element.style.display = none</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventHandler_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MouseoverKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onMouseoverProperty_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventListener_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventListener_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#AddListener_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MouseoverKeyword_Events_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventListener_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#One_NumericValue_CodeConstruct"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PlusSign_CodeConstruct"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasDoubleCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PlusSign_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable++ (OR)
+variable = variable + 1</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_TimeTriggered_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_TimeTriggered_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Addition_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckEndOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToStartOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#WindowTiming_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TimeTriggered_CodeComponent"/>
+        <dc:description rdf:datatype="&xsd;string">An incremental component trigged by time to conduct some task. - Uusally by the parent/root window.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsArrayLength_Expression_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsArrayLength_Expression_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Expression_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Evaluate if variable == array.length</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsZero_Expression_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#IsZero_Expression_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Expression_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Evaluate if variable == 0</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#JSAppendDOM_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#JSAppendDOM_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Friday, 15 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">element.appendChild(new node to be inserted into the document)</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyCode_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyCode_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Check key code property value</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStroke_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStroke_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Tell tale signs that the developer is monitoring the user particular key strokes. </dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStrokes_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStrokes_VisibleComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This component monitors the key strokes of the users.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Last_Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Last_Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListCreation_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListCreation_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This component creates a table/list of content to be displayed to the user. The displaying process can be in the form of appending the DOM elements. </dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListElements_DOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListElements_DOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  ...
+&lt;/ul&gt;
+
+  [OR]
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;/li&gt;
+  ...
+&lt;/ol&gt;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListOfContent_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ListOfContent_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">List of content held by the widget that are the results from the processes of the widget.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_NextButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_NextButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckEndOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToStartOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NextButton_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">This class inherits all the attributes of a Next button but when it comes to the end of the list it loops back to the beginning of the list.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_PreviousButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Loop_PreviousButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CheckStartOfList_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#GoToEndofList_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PreviousButton_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">This class inherits all the attributes of a Previous button but when it comes to the start of the list it loops back to the end of the list.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeDOMElementsVisible_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeDOMElementsVisible_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeVisible_ManipulateDOMElements_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingStylingProperties_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Set DOM elements such that they will be visible.
+ i.e., display : block
+       visibility : visible</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeVisible_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MakeVisible_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">element.style.display = block;
+element.style.visibility = visible;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Manipulation to DOM elements content/attributes</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingDOM_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingDOM_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:description rdf:datatype="&xsd;string">Developer changing the default DOM&#39;s element attributes or content. Either hardcoded or dynamically.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingStylingProperties_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingStylingProperties_Tell-Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Manipulating element&#39;s styling properties.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Monday, 15 October 2012</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MinusSign_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MinusSign_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">-</dc:description>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MonitorTextField_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MonitorTextField_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Change_EventListener_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnChangeAttr_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">This component monitors the change to a text field or text area.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MouseoverKeyword_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MouseoverKeyword_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 11 August 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onMouseover event keyword</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NewWindow_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NewWindow_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Open_Window_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">In JavaScript, window.open(...)
+HTML, anchor tag &lt;a target=&quot;_blank&quot;&gt;</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thu, 12 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#News_Ticker_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#News_Ticker_Widget">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Ticker_Widget"/>
+        <dc:description rdf:datatype="&xsd;string">A ticker widget that display news content</dc:description>
+        <dc:title rdf:datatype="&xsd;string">News Ticker Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 18 February 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NextButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NextButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Addition_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventListener_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnClickAttr_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Buttons_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">When triggered, this component will invoke a set of code that inform the widget to execute the handler set of code. Commonly, this may involve updating the inferface components. 
+
+The Next button can be triggered either by events such as when a mouse click or when the mouse pointer hovers over this component.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NumericValue_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NumericValue_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">numeric value 1, 2, 3...</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoCompleteAttr_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoCompleteAttr_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Set &quot;Autocomplete&quot; attribute to &quot;off&quot;</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 11 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_ElementAttribute_ManipulatingDOM_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_ElementAttribute_ManipulatingDOM_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_ManipulatingDOM_CodeComponent"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Set the &#39;autocomplete&#39; attribute of the text field element in the DOM to &#39;off&#39;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoComplete_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OffAutoCompleteAttr_ManipulateDOMElements_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementAttribute_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Autocomplete attribute of the DOM element is set by the developer to off in either the HTML tags or in the behaviour layer using JavaScript.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Sunday, 10 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnChangeAttr_EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnChangeAttr_EventHandler_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeAttr_Events_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">DOM element attribute onChange</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnClickAttr_EventHandler_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnClickAttr_EventHandler_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickAttr_Events_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#EventHandler_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">DOM element attribute onClick</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#One_NumericValue_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#One_NumericValue_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NumericValue_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Numeric value of 1</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Open_Window_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Open_Window_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Window_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">11 Aug 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">In JavaScript, window.open(...)
+HTML, anchor tag &lt;a target=&quot;_blank&quot;&gt;</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PlusSign_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PlusSign_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">+</dc:description>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupContent_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupContent_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetOrderFront_ElementStyle-ManipulatingDom_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:description rdf:datatype="&xsd;string">An area of content that hover over the rest of the content. This is usually triggered by a user or window event.</dc:description>
+        <dc:title rdf:datatype="&xsd;string">Popup Content Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Tue, 03 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupWindow_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupWindow_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#NewWindow_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents"/>
+        <dc:date rdf:datatype="&xsd;string">Friday, 06 May 2011</dc:date>
+        <dc:title rdf:datatype="&xsd;string">Popup New Window.</dc:title>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupWindow_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupWindow_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PopupWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:date rdf:datatype="&xsd;string">Friday, 06 May 2011</dc:date>
+        <dc:title rdf:datatype="&xsd;string">Popup Window Widget</dc:title>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PreviousButton_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#PreviousButton_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventListener_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Decrement_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnClickAttr_EventHandler_Tell-Sign"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Subtraction_Tell-Sign"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Buttons_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:creator rdf:datatype="&xsd;string">Alex Qiang Chen</dc:creator>
+        <dc:description rdf:datatype="&xsd;string">When triggered, this component will invoke a set of code that inform the widget to execute the handler set of code. Commonly, this may involve updating the inferface components.
+
+The Previous button can be triggered either by events such as when a mouse click or when the mouse pointer hovers over this component.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetDOMElementOrderHigh_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetDOMElementOrderHigh_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetHigherOrder_ManipulateDOMElements_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulatingStylingProperties_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Set the DOM element style order such that it will be highest in the stack. Thus grabbing the user attention.
+
+E.g., z-index : 1 </dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 10 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetHigherOrder_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetHigherOrder_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">Set the DOM element style order such that it will be highest in the stack. Thus grabbing the user attention.
+
+E.g., z-index : 1 or element.style.zIndex=&quot;1&quot;</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thu, 11 Aug 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetOrderFront_ElementStyle-ManipulatingDom_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetOrderFront_ElementStyle-ManipulatingDom_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetDOMElementOrderHigh_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementStyle_ManipulatingDOM_CodeComponent"/>
+        <dc:title rdf:datatype="&xsd;string">Set greatest stack order z-index value</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Tue, 03 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetTimeOut_Window_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetTimeOut_Window_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Window_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">11 Aug 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">E.g., window.setTimeOut();</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SlideShow_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SlideShow_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayPointer_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_NextButton_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Finite_PreviousButton_VisibleComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:title rdf:datatype="&xsd;string">Slide Show Widget</dc:title>
+        <dc:description rdf:datatype="&xsd;string">This Web widget displays a list of content to its user in an orderly manner. The user can use the controls available to inform the widget the content in the list of content that he/she want to view. The Slide Show widget give flexibility to its users so that they can automate the content he/she is viewing, and stop it at anytime within the process. The main difference between this widget from the Carousel widget is, it does not loop round when either ends of the list is reach. However, it will stay at either ends when they are arrived.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Wednesday, 06 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Start_Keyword_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Start_Keyword_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Keyword_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Stocks_Ticker_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Stocks_Ticker_Widget">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Ticker_Widget"/>
+        <dc:description rdf:datatype="&xsd;string">A ticker widget that display stocks content</dc:description>
+        <dc:title rdf:datatype="&xsd;string">Stocks Ticker Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 18 February 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Subtraction_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Subtraction_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#MinusSign_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable = variable - variable</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tabs_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tabs_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#HideContent_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:description rdf:datatype="&xsd;string">Content are stacked and only the top most order of the content in the stack is displayed to the user.</dc:description>
+        <dc:title rdf:datatype="&xsd;string">Tabs Widget</dc:title>
+        <dc:date rdf:datatype="&xsd;string">Thur, 04 May 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Tell-Sign">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <dc:description rdf:datatype="&xsd;string">Tell-signs are clues within the source code that formally defines the widgets and the components it contain.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextArea_DOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextArea_DOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">&lt;textarea name=&#39;&#39; cols=&#39;&#39; rows=&#39;&#39;&gt;...&lt;/textarea&gt;</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Wednesday, 13 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_DOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_DOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DOMElements_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">&lt;input type=&#39;text&#39; value=&#39;&#39; name=&#39;&#39;&gt;</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Wednesday, 13 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextArea_DOMElements_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TextField_DOMElements_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ElementsType_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">Tell tale sign in the DOM for text fields.
+E.g., textarea and input-text</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Ticker_Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Ticker_Widget">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayPointer_CodeComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#DisplayWindow_VisibleComponent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasComponents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Increment_TimeTriggered_CodeComponent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget"/>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 18 February 2010</dc:date>
+        <dc:title rdf:datatype="&xsd;string">Ticker Widget</dc:title>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TimeTriggered_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#TimeTriggered_CodeComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:description rdf:datatype="&xsd;string">These are components that are trigged by time. Uusally by the parent/root window.</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStroke_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStroke_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Check38_KeyCode_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStroke_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Tell tale signs that the developer is monitoring the user up key on the keyboard.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStrokes_VisibleComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStrokes_VisibleComponent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Up_KeyStroke_Tell-Sign"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#KeyStrokes_VisibleComponent"/>
+        <dc:date rdf:datatype="&xsd;string">Monday, 11 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Monitors the &#39;down&#39; button of the user&#39;s keyboard.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateDOMElements_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateDOMElements_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#JSAppendDOM_ManipulateDOMElements_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateInnerHTMLProperty_ManipulateDOMElements_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateInnerHTMLProperty_ManipulateDOMElements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UpdateInnerHTMLProperty_ManipulateDOMElements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ManipulateDOMElements_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">element.innerHTML = variable</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#UserTriggerEvents_CodeComponent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventHandler_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Click_EventListener_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventHandler_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Hover_EventListener_Tell-Sign"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasTellSign"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#OnClickAttr_EventHandler_Tell-Sign"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeComponents"/>
+        <dc:description rdf:datatype="&xsd;string">This can be a link or button</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tue, 03 May 2011</dc:date>
+        <dc:title rdf:datatype="&xsd;string">User Trigger object</dc:title>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Variable_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Variable_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">A memory location to store some computed value. A constant in mathematical domain.</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#VisibleComponents">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Component"/>
+        <dc:date rdf:datatype="&xsd;string">13 Dec 2011, Tue</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Visible components to the user that are part of the widget </dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Widget">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <dc:date rdf:datatype="&xsd;string">29 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">Small application scripts that can reusable.
+i.e. Auto Suggest List, Slide Shows, Popup Menu...</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#WindowTiming_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#WindowTiming_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#SetTimeOut_Window_CodeConstruct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:description rdf:datatype="&xsd;string">E.g., window.setTimeOut();</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 07 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Window_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Window_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">11 Aug 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Zero_Assignment_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Zero_Assignment_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Assignment_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">variable = 0</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ifStatements_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ifStatements_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+        <dc:description rdf:datatype="&xsd;string">if(Expression)
+{
+}</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeAttr_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeAttr_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onChange DOM element attribute</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeProperty_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onChangeProperty_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">JavaScript onChange object</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickAttr_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickAttr_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onClick DOM element attribute</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickProperty_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onClickProperty_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">JavaScript onClick object</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Tuesday, 12 April 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onMouseoverAttr_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onMouseoverAttr_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 11 August 2011</dc:date>
+        <dc:description rdf:datatype="&xsd;string">onMouseover DOM element attribute</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onMouseoverProperty_Events_CodeConstruct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#onMouseoverProperty_Events_CodeConstruct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Events_CodeConstruct"/>
+        <dc:description rdf:datatype="&xsd;string">JavaScript onMouseover object</dc:description>
+        <dc:date rdf:datatype="&xsd;string">Thursday, 11 August 2011</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referentialVariable_Tell-Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#referentialVariable_Tell-Sign">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#hasCodeConstruct"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#Variable_CodeConstruct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#pointsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ArrayObject_Variable_CodeConstruct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2010/1/WIO.owl#ConceptualProcess_Tell-Sign"/>
+        <dc:date rdf:datatype="&xsd;string">30 July 2010</dc:date>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
